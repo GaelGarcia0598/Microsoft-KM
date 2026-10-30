@@ -1,0 +1,3 @@
+Technical Standard: Server Hardening Baseline
+
+This technical standard defines the baseline configuration for servers: disabled unused services, restricted ports, audit logging settings, patch levels and file permissions. Each parameter is listed with the required value and the verification command.

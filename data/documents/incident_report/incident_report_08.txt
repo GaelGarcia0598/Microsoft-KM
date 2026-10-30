@@ -1,0 +1,3 @@
+Incident Report INC-1073: Firewall Misconfiguration
+
+After a scheduled change, the customer portal became unreachable for 35 minutes. The incident was caused by a firewall rule that blocked port 443. The change was rolled back by the on-call engineer. Impact: high. A post-incident review was held.

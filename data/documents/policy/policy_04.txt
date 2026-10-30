@@ -1,0 +1,3 @@
+Remote Work Security Policy
+
+Staff working remotely must connect through the corporate VPN, keep devices encrypted and lock screens when away. Public Wi-Fi is not permitted for handling client information. Managers are responsible for ensuring compliance with this policy.

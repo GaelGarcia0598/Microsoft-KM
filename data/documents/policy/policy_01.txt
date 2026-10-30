@@ -1,0 +1,3 @@
+Password and Authentication Policy
+
+This policy requires all employees to use passwords of at least 14 characters and to enable multi-factor authentication on every corporate account. Passwords must be rotated every 180 days and may never be shared. Violations will be reported to the security officer and may lead to disciplinary action.

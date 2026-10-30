@@ -1,0 +1,3 @@
+Change Management Policy
+
+Every change to production systems must be requested, reviewed and approved by the change advisory board before implementation. Emergency changes require retroactive approval within 24 hours. All approvals must be recorded and the policy applies to every technician.

@@ -1,0 +1,3 @@
+Project Closure Report: Ticketing Platform Upgrade
+
+The upgrade of the ticketing platform was completed two weeks late and 4 percent under budget. Objectives achieved: automated routing and a new dashboard. The report presents lessons learned, final costs, deliverables and recommendations for future projects.

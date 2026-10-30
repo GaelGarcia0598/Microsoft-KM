@@ -1,0 +1,3 @@
+Incident Report INC-1014: Email Delivery Delays
+
+Between 14:00 and 16:30 outgoing email was delayed. The incident was reported by three customers and affected the mail gateway. The team found a queue saturated by a spam campaign. The queue was purged and filtering rules were adjusted. Impact: medium. Status: resolved.

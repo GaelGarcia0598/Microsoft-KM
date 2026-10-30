@@ -1,0 +1,3 @@
+Backup and Disaster Recovery Policy
+
+The organization shall back up critical systems daily and test restoration every quarter. Recovery time objectives must be defined for each service. Responsibility for compliance lies with the infrastructure manager, and exceptions require written approval.

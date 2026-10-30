@@ -1,0 +1,3 @@
+Monthly Operations Metrics Report
+
+Key indicators for October: availability 99.95 percent, mean time to resolve 4.8 hours, 412 incidents opened and 405 closed. The report compares the results with the previous month and highlights trends in recurring problems.

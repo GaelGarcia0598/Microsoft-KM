@@ -1,0 +1,3 @@
+KB-268: Wi-Fi Connected but No Internet
+
+Problem: the device is connected to the wireless network but cannot browse. Cause: DHCP lease issue or DNS misconfiguration. Solution: run ipconfig /renew, flush the DNS cache, forget the network and reconnect. If it fails, report the access point.

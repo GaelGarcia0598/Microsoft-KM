@@ -1,0 +1,3 @@
+KB-275: Fixing Blue Screen Errors After Update
+
+Symptom: the computer shows a blue screen after a Windows update. Cause: an incompatible driver. Solution: boot in safe mode, uninstall the latest update or roll back the driver, then restart. Known issue: some graphics drivers trigger this error.

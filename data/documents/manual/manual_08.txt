@@ -1,0 +1,3 @@
+Manual: Conference Room Equipment Guide
+
+This guide explains how to use the projector, camera and microphone in meeting rooms. Turn on the display, select the HDMI input, connect your laptop and press the Join button. Follow the troubleshooting steps at the end if there is no sound.

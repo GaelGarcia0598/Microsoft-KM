@@ -1,0 +1,3 @@
+Incident Report INC-1066: Active Directory Lockouts
+
+Starting at 07:30, dozens of users were locked out of their accounts. The incident timeline shows repeated failed logins from an old service account. The technician disabled the account, unlocked the users and recorded the root cause in the post-incident review.

@@ -1,0 +1,3 @@
+Software Architecture: Customer Portal
+
+The customer portal follows a three tier architecture: a web front end, an application layer built with microservices and a relational database. Components communicate over REST. The document describes modules, dependencies, deployment diagram and technology stack.

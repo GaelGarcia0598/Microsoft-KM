@@ -1,0 +1,3 @@
+User Guide: Setting Up Email on a Mobile Device
+
+Follow these instructions to add your corporate mailbox to a phone. Open Settings, choose Add Account, select Exchange and enter your email address. Approve the security prompt and press Save. The guide includes screenshots for each step.

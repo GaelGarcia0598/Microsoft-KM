@@ -1,0 +1,3 @@
+Operating Manual: Network Printer Setup
+
+Instructions for adding a network printer on Windows. Open Settings, select Printers, click Add device, choose the printer from the list and install the driver. Print a test page. The manual also describes how to load paper and replace toner.

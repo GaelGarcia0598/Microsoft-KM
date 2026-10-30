@@ -1,0 +1,3 @@
+KB-281: Cannot Access Shared Folder
+
+Problem: access denied when opening a network shared folder. Cause: missing permissions or expired credentials. Solution: verify group membership, clear stored credentials in Credential Manager and map the drive again. Escalate if the error continues.

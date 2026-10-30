@@ -1,0 +1,3 @@
+Incident Report INC-1052: Backup Job Failures
+
+Nightly backup jobs failed for three consecutive days. The incident was detected during the weekly review. The investigation found that the storage target had run out of space. Capacity was extended and the jobs were rerun. The incident is closed.

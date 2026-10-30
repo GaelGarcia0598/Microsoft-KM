@@ -1,0 +1,3 @@
+Network Architecture Overview
+
+This document describes the network topology: core switches, VLAN segmentation, firewall zones and the DMZ. Each VLAN has a defined subnet and gateway. The design specifies redundant links, routing protocols and the interface between on-premises and cloud networks.

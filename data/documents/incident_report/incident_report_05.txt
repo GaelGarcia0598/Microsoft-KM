@@ -1,0 +1,3 @@
+Incident Report INC-1040: Wi-Fi Network Failure
+
+The office Wi-Fi network went down at 09:05 affecting the second floor. Technician Ana Torres found a failed access point controller. The device was replaced and service was restored after 70 minutes. Priority: high. Root cause: hardware end of life.

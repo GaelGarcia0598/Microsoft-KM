@@ -1,0 +1,3 @@
+Manual: Using the Ticketing Portal
+
+This manual shows employees how to open, track and close a support ticket. Click New Ticket, choose the category, describe the problem and attach screenshots. Press Submit. You can follow the progress from the My Tickets tab.

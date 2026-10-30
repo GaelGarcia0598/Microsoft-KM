@@ -1,0 +1,3 @@
+Incident Escalation Policy
+
+Incidents must be escalated according to priority: critical incidents to the on-call manager within 15 minutes, high priority within one hour. Technicians are obligated to follow this escalation policy and to document every escalation decision.

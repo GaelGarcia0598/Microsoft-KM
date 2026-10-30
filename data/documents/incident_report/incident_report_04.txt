@@ -1,0 +1,3 @@
+Incident Report INC-1031: Ransomware Attempt Blocked
+
+A phishing email led an employee to open a malicious attachment. The endpoint agent detected and isolated the laptop within two minutes. No data was encrypted. The security team reviewed the timeline, notified the customer and documented lessons learned.

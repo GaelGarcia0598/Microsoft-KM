@@ -1,0 +1,3 @@
+Project Progress Report: Cloud Migration
+
+Status report for the cloud migration project. Milestones completed: inventory, network design and pilot migration of 15 servers. Budget consumption is 62 percent. Risks include limited staff availability. The project is on schedule and the next phase begins in July.

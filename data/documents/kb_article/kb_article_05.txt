@@ -1,0 +1,3 @@
+KB-252: Printer Offline Error
+
+Symptom: Windows shows the printer as offline. Cause: wrong port, stopped spooler service or network issue. Fix: restart the print spooler, remove and re-add the printer, and check the cable or Wi-Fi connection. This workaround solves most cases.

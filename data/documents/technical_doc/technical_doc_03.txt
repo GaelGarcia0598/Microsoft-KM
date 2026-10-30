@@ -1,0 +1,3 @@
+API Reference: Ticketing Service
+
+The ticketing service exposes a REST API. The endpoint POST /tickets creates a ticket, GET /tickets/{id} returns its details. Requests require a bearer token and return JSON. The reference lists parameters, response codes, rate limits and sample payloads.

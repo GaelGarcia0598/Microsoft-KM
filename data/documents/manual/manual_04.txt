@@ -1,0 +1,3 @@
+Quick Start Guide: Installing the Endpoint Protection Agent
+
+Step by step guide for installing the antivirus agent on a new laptop. Download the package, double click the installer, accept the license, choose the default options and restart. Open the console and confirm that the device appears as protected.

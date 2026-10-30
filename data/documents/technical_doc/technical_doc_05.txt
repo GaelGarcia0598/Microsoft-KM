@@ -1,0 +1,3 @@
+Configuration Reference: Mail Gateway
+
+This technical reference documents the configuration parameters of the mail gateway: SMTP relay settings, SPF, DKIM and DMARC records, TLS requirements, spam filter thresholds and connector definitions. Default values and recommended settings are provided.

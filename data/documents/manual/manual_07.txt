@@ -1,0 +1,3 @@
+User Manual: Backup Client Operation
+
+Learn how to start a manual backup and restore a file with the backup client. Step 1: open the application. Step 2: select the folder. Step 3: press Back Up Now. To restore, choose the date, select the file and click Restore. Screenshots are provided.

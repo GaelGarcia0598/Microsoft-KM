@@ -1,0 +1,3 @@
+KB-230: Resolving Slow Computer Performance
+
+Symptom: the laptop is slow and applications freeze. Cause: high disk usage or too many startup programs. Workaround: open Task Manager, disable unnecessary startup items, clear temporary files and run the disk cleanup. Reboot and verify the performance.

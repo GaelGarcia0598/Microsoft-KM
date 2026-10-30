@@ -1,0 +1,3 @@
+KB-201: Troubleshooting VPN Error 809
+
+Symptom: the VPN client shows error 809 and cannot connect. Cause: the firewall or router blocks the required UDP ports. Solution: enable ports 500 and 4500, restart the client and test again. If the problem persists, check the certificate and contact support.

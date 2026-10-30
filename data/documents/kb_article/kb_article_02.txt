@@ -1,0 +1,3 @@
+KB-214: How to Fix Outlook Not Syncing
+
+Problem: Outlook stays on Updating and new mail does not arrive. Possible causes: corrupted profile or cached mode issue. Solution: disable cached mode, restart Outlook, or create a new profile. Resolved cases show that recreating the profile fixes most sync errors.

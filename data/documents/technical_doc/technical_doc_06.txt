@@ -1,0 +1,3 @@
+System Design: Backup Infrastructure
+
+The backup infrastructure consists of a primary backup server, an object storage target and an offsite replica. The design describes components, data flows, retention schedule, encryption and the interfaces with the monitoring platform. Capacity requirements are specified.
