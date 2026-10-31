@@ -1,3 +1,3 @@
 Incident Report INC-1023: Database Server Crash
 
-At 02:10 the monitoring system raised a critical alert: the ERP database server stopped responding. The on-call technician restarted the service after finding a full disk. Downtime lasted 48 minutes. Root cause analysis showed missing log rotation. Follow-up actions were assigned.
+At 02:10 the monitoring system raised a critical alert: the Dynamics 365 database server stopped responding. The on-call technician restarted the service after finding a full disk. Downtime lasted 48 minutes. Root cause analysis showed missing log rotation. Follow-up actions were assigned.

@@ -1,3 +1,3 @@
 Incident Report INC-1001: VPN Outage
 
-On Monday at 08:40 customers reported that the VPN Service was unavailable. The incident affected 120 remote users for 95 minutes. Technician Carlos Ruiz identified an expired certificate, renewed it and restored the service at 10:15. Root cause: missing renewal alert. Corrective action: add certificate monitoring.
+On Monday at 08:40 customers reported that the Azure VPN Gateway was unavailable. The incident affected 120 remote users for 95 minutes. A cloud support engineer identified an expired certificate, renewed it and restored the service at 10:15. Root cause: missing renewal alert. Corrective action: add certificate monitoring.

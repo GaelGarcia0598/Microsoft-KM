@@ -1,3 +1,3 @@
-Database Schema Documentation: ERP
+Database Schema Documentation: Dynamics 365
 
-The ERP database contains the tables customers, orders, invoices and products. This document lists columns, data types, primary keys and foreign key relationships, indexes and stored procedures. An entity relationship diagram illustrates the schema.
+The Dynamics 365 database contains the tables customers, orders, invoices and products. This document lists columns, data types, primary keys and foreign key relationships, indexes and stored procedures. An entity relationship diagram illustrates the schema.

@@ -1,4 +1,9 @@
-"""Creates the sample document corpus (data/documents/<category>/<id>.txt)."""
+"""Creates the sample document corpus (data/documents/<category>/<id>.txt).
+
+The documents are synthetic examples written in the style of the documents that Microsoft's
+support, cloud operations, security and management teams produce. They are NOT real Microsoft
+internal documents.
+"""
 from pathlib import Path
 
 DOCS = {
@@ -21,14 +26,14 @@ DOCS = {
          "All information must be labeled as public, internal, confidential or restricted. Confidential documents may only be shared with authorized personnel. Employees are required to follow handling rules for each classification level and to report violations."),
     ],
     "manual": [
-        ("User Manual: Configuring the Corporate VPN Client",
-         "This manual explains step by step how to install and configure the VPN client. Step 1: download the installer from the portal. Step 2: run the setup wizard. Step 3: enter the server address and sign in with your credentials. Step 4: click Connect and verify the status icon."),
+        ("User Manual: Configuring the Azure VPN Client",
+                 "This manual explains step by step how to install and configure the Azure VPN Client. Step 1: download the installer from the portal. Step 2: run the setup wizard. Step 3: enter the server address and sign in with your credentials. Step 4: click Connect and verify the status icon."),
         ("User Guide: Setting Up Email on a Mobile Device",
          "Follow these instructions to add your corporate mailbox to a phone. Open Settings, choose Add Account, select Exchange and enter your email address. Approve the security prompt and press Save. The guide includes screenshots for each step."),
-        ("Manual: Using the Ticketing Portal",
+        ("Manual: Using the Microsoft Support Ticketing Portal",
          "This manual shows employees how to open, track and close a support ticket. Click New Ticket, choose the category, describe the problem and attach screenshots. Press Submit. You can follow the progress from the My Tickets tab."),
-        ("Quick Start Guide: Installing the Endpoint Protection Agent",
-         "Step by step guide for installing the antivirus agent on a new laptop. Download the package, double click the installer, accept the license, choose the default options and restart. Open the console and confirm that the device appears as protected."),
+        ("Quick Start Guide: Onboarding a Laptop to Microsoft Defender for Endpoint",
+                 "Step by step guide for installing the Microsoft Defender antivirus agent on a new laptop. Download the package, double click the installer, accept the license, choose the default options and restart. Open the console and confirm that the device appears as protected."),
         ("Operating Manual: Network Printer Setup",
          "Instructions for adding a network printer on Windows. Open Settings, select Printers, click Add device, choose the printer from the list and install the driver. Print a test page. The manual also describes how to load paper and replace toner."),
         ("Manual: How to Request a New Employee Account",
@@ -40,18 +45,18 @@ DOCS = {
     ],
     "incident_report": [
         ("Incident Report INC-1001: VPN Outage",
-         "On Monday at 08:40 customers reported that the VPN Service was unavailable. The incident affected 120 remote users for 95 minutes. Technician Carlos Ruiz identified an expired certificate, renewed it and restored the service at 10:15. Root cause: missing renewal alert. Corrective action: add certificate monitoring."),
+         "On Monday at 08:40 customers reported that the Azure VPN Gateway was unavailable. The incident affected 120 remote users for 95 minutes. A cloud support engineer identified an expired certificate, renewed it and restored the service at 10:15. Root cause: missing renewal alert. Corrective action: add certificate monitoring."),
         ("Incident Report INC-1014: Email Delivery Delays",
          "Between 14:00 and 16:30 outgoing email was delayed. The incident was reported by three customers and affected the mail gateway. The team found a queue saturated by a spam campaign. The queue was purged and filtering rules were adjusted. Impact: medium. Status: resolved."),
         ("Incident Report INC-1023: Database Server Crash",
-         "At 02:10 the monitoring system raised a critical alert: the ERP database server stopped responding. The on-call technician restarted the service after finding a full disk. Downtime lasted 48 minutes. Root cause analysis showed missing log rotation. Follow-up actions were assigned."),
+         "At 02:10 the monitoring system raised a critical alert: the Dynamics 365 database server stopped responding. The on-call technician restarted the service after finding a full disk. Downtime lasted 48 minutes. Root cause analysis showed missing log rotation. Follow-up actions were assigned."),
         ("Incident Report INC-1031: Ransomware Attempt Blocked",
-         "A phishing email led an employee to open a malicious attachment. The endpoint agent detected and isolated the laptop within two minutes. No data was encrypted. The security team reviewed the timeline, notified the customer and documented lessons learned."),
+         "A phishing email led an employee to open a malicious attachment. Microsoft Defender for Endpoint detected and isolated the laptop within two minutes. No data was encrypted. The security team reviewed the timeline, notified the customer and documented lessons learned."),
         ("Incident Report INC-1040: Wi-Fi Network Failure",
-         "The office Wi-Fi network went down at 09:05 affecting the second floor. Technician Ana Torres found a failed access point controller. The device was replaced and service was restored after 70 minutes. Priority: high. Root cause: hardware end of life."),
+         "The office Wi-Fi network went down at 09:05 affecting the second floor. A network engineer found a failed access point controller. The device was replaced and service was restored after 70 minutes. Priority: high. Root cause: hardware end of life."),
         ("Incident Report INC-1052: Backup Job Failures",
          "Nightly backup jobs failed for three consecutive days. The incident was detected during the weekly review. The investigation found that the storage target had run out of space. Capacity was extended and the jobs were rerun. The incident is closed."),
-        ("Incident Report INC-1066: Active Directory Lockouts",
+        ("Incident Report INC-1066: Microsoft Entra ID Lockouts",
          "Starting at 07:30, dozens of users were locked out of their accounts. The incident timeline shows repeated failed logins from an old service account. The technician disabled the account, unlocked the users and recorded the root cause in the post-incident review."),
         ("Incident Report INC-1073: Firewall Misconfiguration",
          "After a scheduled change, the customer portal became unreachable for 35 minutes. The incident was caused by a firewall rule that blocked port 443. The change was rolled back by the on-call engineer. Impact: high. A post-incident review was held."),
@@ -64,7 +69,7 @@ DOCS = {
         ("KB-230: Resolving Slow Computer Performance",
          "Symptom: the laptop is slow and applications freeze. Cause: high disk usage or too many startup programs. Workaround: open Task Manager, disable unnecessary startup items, clear temporary files and run the disk cleanup. Reboot and verify the performance."),
         ("KB-245: Account Locked Out After Password Change",
-         "Problem: the user keeps getting locked out after changing the password. Cause: a phone or mapped drive still uses the old credentials. Solution: update the saved password on all devices, then ask the technician to unlock the account in Active Directory."),
+         "Problem: the user keeps getting locked out after changing the password. Cause: a phone or mapped drive still uses the old credentials. Solution: update the saved password on all devices, then ask the technician to unlock the account in Microsoft Entra ID."),
         ("KB-252: Printer Offline Error",
          "Symptom: Windows shows the printer as offline. Cause: wrong port, stopped spooler service or network issue. Fix: restart the print spooler, remove and re-add the printer, and check the cable or Wi-Fi connection. This workaround solves most cases."),
         ("KB-268: Wi-Fi Connected but No Internet",
@@ -76,13 +81,13 @@ DOCS = {
     ],
     "technical_doc": [
         ("Technical Specification: VPN Gateway Architecture",
-         "The VPN gateway is deployed as a high availability pair behind the perimeter firewall. It uses IPsec and TLS tunnels with certificate-based authentication. The architecture diagram shows the load balancer, the gateway cluster, the RADIUS server and the connection to the Active Directory domain."),
+         "The VPN gateway is deployed as a high availability pair behind the perimeter firewall. It uses IPsec and TLS tunnels with certificate-based authentication. The architecture diagram shows the load balancer, the gateway cluster, the RADIUS server and the connection to Microsoft Entra ID."),
         ("Network Architecture Overview",
          "This document describes the network topology: core switches, VLAN segmentation, firewall zones and the DMZ. Each VLAN has a defined subnet and gateway. The design specifies redundant links, routing protocols and the interface between on-premises and cloud networks."),
         ("API Reference: Ticketing Service",
          "The ticketing service exposes a REST API. The endpoint POST /tickets creates a ticket, GET /tickets/{id} returns its details. Requests require a bearer token and return JSON. The reference lists parameters, response codes, rate limits and sample payloads."),
-        ("Database Schema Documentation: ERP",
-         "The ERP database contains the tables customers, orders, invoices and products. This document lists columns, data types, primary keys and foreign key relationships, indexes and stored procedures. An entity relationship diagram illustrates the schema."),
+        ("Database Schema Documentation: Dynamics 365",
+                 "The Dynamics 365 database contains the tables customers, orders, invoices and products. This document lists columns, data types, primary keys and foreign key relationships, indexes and stored procedures. An entity relationship diagram illustrates the schema."),
         ("Configuration Reference: Mail Gateway",
          "This technical reference documents the configuration parameters of the mail gateway: SMTP relay settings, SPF, DKIM and DMARC records, TLS requirements, spam filter thresholds and connector definitions. Default values and recommended settings are provided."),
         ("System Design: Backup Infrastructure",

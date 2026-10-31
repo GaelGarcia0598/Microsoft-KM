@@ -25,7 +25,7 @@ def render(command, text, name, lines=None):
     fig = plt.figure(figsize=(12.5, h), facecolor="#0c0c0c")
     ax = fig.add_axes([0, 0, 1, 1]); ax.axis("off"); ax.set_facecolor("#0c0c0c")
     ax.set_xlim(0, 1); ax.set_ylim(0, 1)
-    ax.text(0.01, 1 - 0.55 / h, f"PS NovaTech-KM> {command}", color="#4ec9b0", family="monospace", fontsize=9.5, va="top")
+    ax.text(0.01, 1 - 0.55 / h, f"PS Microsoft-KM> {command}", color="#4ec9b0", family="monospace", fontsize=9.5, va="top")
     ax.text(0.01, 1 - 1.0 / h, "\n".join(rows), color="#cccccc", family="monospace", fontsize=9, va="top",
             linespacing=1.3)
     out = ROOT / "evidence" / name

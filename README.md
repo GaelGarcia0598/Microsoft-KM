@@ -1,7 +1,7 @@
-# NovaTech Solutions: Knowledge Management System (prototype)
+# Microsoft: Knowledge Management System (prototype)
 
 Course project for *Sistemas y tecnologías de administración del conocimiento*.
-Fictional company: **NovaTech Solutions**, a managed IT services and technical support provider.
+Organization: **Microsoft** (as in Activity 1). The sample documents are synthetic, written in the style of Microsoft support, cloud, security and management documents; they are not real internal documents.
 
 ## Contents
 
@@ -11,11 +11,11 @@ Fictional company: **NovaTech Solutions**, a managed IT services and technical s
 | `src/classifier.py` | Automated classification: TF-IDF + Naive Bayes / Logistic Regression |
 | `src/semantic_search.py` | Semantic search: TF-IDF + cosine similarity (optional ontology query expansion) |
 | `src/evaluate_search.py` | Evaluation of the search with 12 queries |
-| `ontology/NovaTechKM.owl` | Ontology (15 classes, 20 object properties); `ITSupportOntology_Activity2.owl` is the base from Activity 2 |
+| `ontology/MicrosoftKM.owl` | Ontology (15 classes, 20 object properties); `ITSupportOntology_Activity2.owl` is the base from Activity 2 |
 | `src/build_diagrams.py` | Generates the OWL file, ontology graphs and lifecycle map |
 | `src/make_screenshots.py`, `src/build_report.py` | Evidence images and the PDF report |
 | `evidence/` | Diagrams, console outputs and screenshots |
-| `docs/NovaTech_KM_Project_Progress.pdf` | Project progress document |
+| `docs/Microsoft_KM_Project_Progress.pdf` | Project progress document |
 
 ## Run
 

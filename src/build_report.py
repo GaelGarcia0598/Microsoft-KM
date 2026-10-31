@@ -12,7 +12,7 @@ from reportlab.platypus import (Image, KeepTogether, PageBreak, Paragraph, Prefo
 
 ROOT = Path(__file__).resolve().parent.parent
 EV = ROOT / "evidence"
-REPO_URL = "https://github.com/GaelGarcia0598/NovaTech-KM"
+REPO_URL = "https://github.com/GaelGarcia0598/Microsoft-KM"
 NAVY = colors.HexColor("#17365d")
 LIGHT = colors.HexColor("#d9e9f6")
 
@@ -56,7 +56,7 @@ def table(rows, widths, header=True):
 def footer(c, d):
     c.setFont("Helvetica", 8)
     c.setFillColor(colors.grey)
-    c.drawString(0.75 * inch, 0.5 * inch, "NovaTech Solutions - Knowledge Management System | Gael AndrÃ©s GarcÃ­a GarcÃ­a")
+    c.drawString(0.75 * inch, 0.5 * inch, "Microsoft - Knowledge Management System | Gael AndrÃ©s GarcÃ­a GarcÃ­a")
     c.drawRightString(letter[0] - 0.75 * inch, 0.5 * inch, f"Page {d.page}")
 
 
@@ -66,7 +66,7 @@ def build():
     s += [Spacer(1, 1.2 * inch),
           P("Sistemas y tecnologÃ­as de administraciÃ³n del conocimiento",
             ParagraphStyle("c1", parent=H2, alignment=TA_CENTER, textColor=colors.HexColor("#2a7ba8"), fontSize=14)),
-          P("Knowledge Management System for NovaTech Solutions",
+          P("Knowledge Management System for Microsoft",
             ParagraphStyle("c2", parent=H1, alignment=TA_CENTER, fontSize=26, leading=31, spaceBefore=14)),
           P("Project progress report: lifecycle map, ontology, automated classification and semantic search",
             ParagraphStyle("c3", parent=B, alignment=TA_CENTER, fontSize=12, textColor=colors.HexColor("#555555"))),
@@ -84,31 +84,33 @@ def build():
     s += [cov, PageBreak()]
 
     # ---------- 1 Company ----------
-    s += [P("1. Description of the fictional company", H1),
-          P("<b>NovaTech Solutions</b> is a fictional managed IT services and technical support company based in "
-            "Monterrey, Mexico, with about 220 employees. It keeps the IT Technical Support domain used in Activity 2 "
-            "(customers, incidents, systems, technicians, tools and documents), so the ontology built earlier is extended "
-            "rather than replaced."),
+    s += [P("1. Description of the company: Microsoft", H1),
+          P("<b>Microsoft Corporation</b> is a global technology company (headquartered in Redmond, Washington, USA) that develops "
+            "software, cloud services (Azure, Microsoft 365, Dynamics 365), devices and AI products. It is the organization "
+            "analysed in Activity 1. This project keeps the IT Technical Support domain of Activity 2 (customers, incidents, "
+            "systems, technicians, tools and documents) and extends that ontology. <i>Note: the 48 sample documents are synthetic "
+            "examples written in the style of Microsoft support, cloud, security and management documents; they are not real "
+            "internal Microsoft documents.</i>"),
           P("a) Type of organization", H2),
-          P("A technology services company (managed service provider) that operates and supports IT infrastructure and "
-            "business applications for mid-size clients in retail, manufacturing and education."),
+          P("A multinational technology company (software, cloud and devices) that builds products and also operates and "
+            "supports cloud infrastructure and business applications for consumers, enterprises and public institutions."),
           P("b) Core activities", H2),
           table([["Area", "Core activities", "Knowledge generated"],
-                 ["Service desk / technical support", "Receives and resolves tickets by phone, email and portal (24/7 for critical clients).",
+                 ["Customer and technical support", "Receives and resolves support cases by phone, email, chat and portal (24/7 for critical customers).",
                   "Troubleshooting solutions, recurring issues, customer feedback."],
-                 ["Infrastructure and cloud operations", "Monitors and maintains networks, VPN, servers, email, backups and cloud migrations.",
+                 ["Cloud and infrastructure operations", "Operates Azure, networks, VPN gateways, Exchange Online, backups and customer cloud migrations.",
                   "Incident reports, configurations, root-cause analyses."],
-                 ["Security", "Endpoint protection, access control, audits, phishing response.",
+                 ["Security", "Microsoft Defender, Microsoft Entra ID access control, audits, phishing response.",
                   "Policies, audit findings, threat lessons learned."],
-                 ["Projects and consulting", "Cloud migrations, platform upgrades, onboarding of new clients.",
+                 ["Product engineering and projects", "Development on GitHub and Azure DevOps, platform upgrades, customer onboarding.",
                   "Technical designs, progress and closure reports."],
-                 ["Management", "SLA monitoring, planning, training, client relationship.",
+                 ["Management", "SLA monitoring, planning, training (Microsoft Learn), customer relationship.",
                   "Performance reports, KPIs, satisfaction surveys."]],
                 [1.6 * inch, 2.9 * inch, W - 4.5 * inch]),
           Spacer(1, 6),
           P("c) Types of knowledge and documents handled", H2),
-          P("NovaTech manages both <b>explicit</b> knowledge (documents) and <b>tacit</b> knowledge (the diagnostic judgment of "
-            "senior technicians, which the lifecycle tries to turn into documents). Six document types are handled and are "
+          P("Microsoft manages both <b>explicit</b> knowledge (documents) and <b>tacit</b> knowledge (the diagnostic judgment of "
+            "senior engineers, which the lifecycle tries to turn into documents). Six document types are handled and are "
             "the categories used by the classifier:"),
           table([["Document type (category)", "Purpose", "Typical content"],
                  ["Policy (policy)", "Rules and obligations", "Password, remote work, change management, backup, escalation."],
@@ -122,11 +124,11 @@ def build():
 
     # ---------- 2 Lifecycle ----------
     s += [P("2. Knowledge lifecycle map", H1),
-          P("The map extends the five stages of Activity 1 (Microsoft) to six stages adapted to NovaTech, separating "
+          P("The map extends the five stages of Activity 1 (Microsoft) to six stages adapted to Microsoft, separating "
             "<i>organize / classify</i> from <i>store / document</i> as required by this project. Gold stages are the ones "
             "supported by the Python prototype."),
-          img("lifecycle_map.png", caption="Figure 1. Knowledge lifecycle map of NovaTech Solutions."),
-          table([["Stage", "How it happens at NovaTech", "Documents / outputs", "Support"],
+          img("lifecycle_map.png", caption="Figure 1. Knowledge lifecycle map of Microsoft."),
+          table([["Stage", "How it happens at Microsoft", "Documents / outputs", "Support"],
                  ["1. Creation / acquisition", "Technicians capture lessons from tickets and incident reviews; project teams write designs; training and vendor documentation is acquired.", "Incident reports, drafts, designs", "Templates"],
                  ["2. Storage / documentation", "Documents are saved in the repository using standard templates and metadata (author, version, system, date).", "All six document types", "Repository"],
                  ["3. Organization / classification", "Each document is tagged by type, topic, system and department following the ontology.", "Metadata, category labels", "<b>Prototype 1: classifier</b>"],
@@ -138,7 +140,7 @@ def build():
 
     # ---------- 3 Ontology ----------
     s += [P("3. Ontology / conceptual graph of organizational knowledge", H1),
-          P("The ontology (<font face='Courier'>ontology/NovaTechKM.owl</font>, OWL/RDF-XML) extends the Activity 2 model "
+          P("The ontology (<font face='Courier'>ontology/MicrosoftKM.owl</font>, OWL/RDF-XML) extends the Activity 2 model "
             "(Incident, Technician, System, Tool, Document, Customer) with the classes needed to organize knowledge. It has "
             "<b>15 classes</b>, <b>20 object properties</b>, 8 data properties and sample individuals "
             "(e.g. incident INC-1001, KB-201, a remote-work policy)."),
@@ -152,9 +154,9 @@ def build():
                 [1.9 * inch, W - 1.9 * inch]),
           Spacer(1, 6),
           img("document_concept_graph.png", caption="Figure 3. Which document types relate to which concepts, and through which property."),
-          P("Example of how knowledge is connected: incident <b>INC-1001</b> (VPN outage) <i>affects</i> the VPN Service and is "
-            "<i>resolved by</i> Carlos Ruiz. Its <b>incident report</b> <i>documents</i> the incident; the <b>KB-201</b> article is "
-            "<i>derivedFrom</i> that report, <i>solves</i> the incident, and <i>describes</i> the VPN Service; the "
+          P("Example of how knowledge is connected: incident <b>INC-1001</b> (VPN outage) <i>affects</i> the Azure VPN Gateway and is "
+            "<i>resolved by</i> a support engineer. Its <b>incident report</b> <i>documents</i> the incident; the <b>KB-201</b> article is "
+            "<i>derivedFrom</i> that report, <i>solves</i> the incident, and <i>describes</i> the Azure VPN Gateway; the "
             "<b>remote-work policy</b> <i>governs</i> the same system. A user searching for \"VPN\" can therefore reach the "
             "policy, the manual, the incident and the fix through the graph."),
           PageBreak()]
@@ -169,11 +171,11 @@ def build():
                  ["src/semantic_search.py", "TF-IDF vectors, cosine similarity and ranked results; optional ontology-based query expansion."],
                  ["src/evaluate_search.py", "12-query evaluation of the search component."],
                  ["src/build_diagrams.py", "Generates the OWL file, ontology graphs and lifecycle map."],
-                 ["ontology/*.owl", "NovaTechKM.owl (this project) and ITSupportOntology_Activity2.owl (previous activity)."]],
+                 ["ontology/*.owl", "MicrosoftKM.owl (this project) and ITSupportOntology_Activity2.owl (previous activity)."]],
                 [1.9 * inch, W - 1.9 * inch]),
           P("4.1 Document set", H2),
           P("48 short documents, 8 per category (policy, manual, incident_report, kb_article, technical_doc, project_report), "
-            "written to resemble the documents of the fictional company. The first line is the title and the rest is the body."),
+            "written to resemble Microsoft support, cloud, security and management documents (synthetic, not real internal documents). The first line is the title and the rest is the body."),
           P("4.2 Automated classification", H2),
           P("<b>Steps:</b> (i) load all documents and their category labels; (ii) vectorize with <font face='Courier'>TfidfVectorizer</font> "
             "(lowercase, English stop words, unigrams + bigrams, sublinear term frequency); (iii) split 75% / 25% with stratification "
@@ -203,8 +205,8 @@ def build():
             "<font face='Courier'>src/make_screenshots.py</font> from the actual execution results)."),
           P("5.1 Classification", H2),
           img("screenshot_classifier_training.png", caption="Figure 4. Training and evaluation of both models."),
-          P("Both models reached 100% on the 12-document test set; with 5-fold cross-validation Naive Bayes obtained 91.8% and "
-            "Logistic Regression 95.8%, so Logistic Regression was selected. The test set is small, so the cross-validation "
+          P("On the 12-document test set Naive Bayes reached 83.3% and Logistic Regression 91.7%; with 5-fold cross-validation "
+            "Naive Bayes obtained 87.6% and Logistic Regression 93.8%, so Logistic Regression was selected. The test set is small, so the cross-validation "
             "figure is the more reliable estimate."),
           img("screenshot_classifier_predictions.png", caption="Figure 5. Test predictions and classification of six new, unseen texts."),
           img("confusion_matrix.png", width=W * 0.62, caption="Figure 6. Confusion matrix of the selected model on the test set."),
@@ -227,7 +229,7 @@ def build():
           P("The project builds directly on the previous activities and on the experiments carried out while developing the prototype."),
           table([["Exercise", "What was done", "Contribution to this project"],
                  ["Activity 1: Knowledge life cycle at Microsoft", "Analysis of knowledge creation, storage, sharing, application and update; tacit vs explicit knowledge; AI support (classification, semantic search, outdated-content detection).", "Base of the lifecycle map (Section 2) and the idea of AI-assisted classification and search."],
-                 ["Activity 2: IT Technical Support ontology", "OWL ontology with 6 classes, 9 object properties and 8 data properties, checked with the HermiT reasoner.", "Extended into NovaTechKM.owl (Section 3), keeping its classes and properties."],
+                 ["Activity 2: IT Technical Support ontology", "OWL ontology with 6 classes, 9 object properties and 8 data properties, checked with the HermiT reasoner.", "Extended into MicrosoftKM.owl (Section 3), keeping its classes and properties."],
                  ["Classification tests", "Naive Bayes vs Logistic Regression, hold-out and 5-fold cross-validation, confusion matrix, prediction of new documents.", "Prototype 1 (Section 5.1)."],
                  ["Information retrieval exercises", "TF-IDF vectors, cosine similarity ranking, query expansion with ontology terms, 12-query evaluation.", "Prototype 2 (Section 5.2)."],
                  ["Conceptual representation", "Ontology graph, document-concept relation matrix and lifecycle map.", "Figures 1 to 3."]],
@@ -242,9 +244,9 @@ def build():
             "where a person confirms the predicted category, consistent with the human-review principle of Activity 1."),
           P(f'Repository: <link href="{REPO_URL}" color="blue">{REPO_URL}</link>')]
 
-    out = ROOT / "docs" / "NovaTech_KM_Project_Progress.pdf"
+    out = ROOT / "docs" / "Microsoft_KM_Project_Progress.pdf"
     SimpleDocTemplate(str(out), pagesize=letter, leftMargin=0.75 * inch, rightMargin=0.75 * inch, topMargin=0.7 * inch,
-                      bottomMargin=0.8 * inch, title="NovaTech Solutions - Knowledge Management System",
+                      bottomMargin=0.8 * inch, title="Microsoft Solutions - Knowledge Management System",
                       author="Gael AndrÃ©s GarcÃ­a GarcÃ­a").build(s, onFirstPage=lambda c, d: None, onLaterPages=footer)
     print("Wrote", out)
 

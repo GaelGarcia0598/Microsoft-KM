@@ -1,4 +1,4 @@
-"""Builds the NovaTech knowledge ontology (OWL/RDF-XML), the ontology graphs and the lifecycle map.
+"""Builds the Microsoft knowledge ontology (OWL/RDF-XML), the ontology graphs and the lifecycle map.
 
 Extends the IT Technical Support ontology from Activity 2 with document types,
 topics, departments and lifecycle stages.
@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parent.parent
-NS = "http://example.org/ontologies/novatech-km#"
+NS = "http://example.org/ontologies/microsoft-km#"
 
 NAVY, BLUE, RED, GOLD, GREY = "#17365d", "#d9e9f6", "#c0392b", "#fff0c8", "#7a8794"
 
@@ -19,13 +19,13 @@ NAVY, BLUE, RED, GOLD, GREY = "#17365d", "#d9e9f6", "#c0392b", "#fff0c8", "#7a87
 CLASSES = [
     ("Incident", None, "A reported disruption affecting an IT system (from Activity 2)."),
     ("Technician", None, "A support specialist who resolves incidents and authors documents."),
-    ("System", None, "Application, service or infrastructure component supported by NovaTech."),
+    ("System", None, "Product, service or infrastructure component supported by Microsoft (e.g. Azure, Microsoft 365)."),
     ("Tool", None, "Software or utility used to diagnose or fix incidents."),
     ("Customer", None, "A client or user who reports an incident."),
     ("Topic", None, "A subject area used to classify knowledge (VPN, Email, Security...)."),
     ("Department", None, "An organizational unit that owns knowledge."),
     ("LifecycleStage", None, "A stage of the knowledge life cycle."),
-    ("Document", None, "Explicit knowledge stored by NovaTech."),
+    ("Document", None, "Explicit knowledge stored by Microsoft teams."),
     ("Policy", "Document", "Rules and obligations (security, privacy, change management)."),
     ("Manual", "Document", "Step-by-step user guide or operating instructions."),
     ("IncidentReport", "Document", "Record of an incident: timeline, root cause and corrective action."),
@@ -65,18 +65,18 @@ DATA_PROPS = [
 ]
 
 INDIVIDUALS = [  # (id, class, [(prop, target)])
-    ("VPN_Service", "System", []), ("Email_Service", "System", []),
+    ("Azure_VPN_Gateway", "System", []), ("Exchange_Online", "System", []),
     ("Topic_VPN", "Topic", []), ("Topic_Security", "Topic", []),
     ("Dept_Support", "Department", []), ("Dept_Operations", "Department", []),
     ("Stage_Share", "LifecycleStage", []), ("Stage_Apply", "LifecycleStage", []),
-    ("Carlos_Ruiz", "Technician", [("memberOf", "Dept_Support"), ("resolves", "INC-1001")]),
-    ("INC-1001", "Incident", [("affects", "VPN_Service")]),
+    ("Support_Engineer_1", "Technician", [("memberOf", "Dept_Support"), ("resolves", "INC-1001")]),
+    ("INC-1001", "Incident", [("affects", "Azure_VPN_Gateway")]),
     ("IR-INC-1001", "IncidentReport", [("documents", "INC-1001"), ("aboutTopic", "Topic_VPN"),
-                                       ("authoredBy", "Carlos_Ruiz"), ("ownedBy", "Dept_Operations")]),
+                                       ("authoredBy", "Support_Engineer_1"), ("ownedBy", "Dept_Operations")]),
     ("KB-201", "KBArticle", [("derivedFrom", "IR-INC-1001"), ("solves", "INC-1001"),
-                             ("aboutTopic", "Topic_VPN"), ("describes", "VPN_Service"),
+                             ("aboutTopic", "Topic_VPN"), ("describes", "Azure_VPN_Gateway"),
                              ("inStage", "Stage_Share")]),
-    ("Policy-Remote-Work", "Policy", [("governs", "VPN_Service"), ("aboutTopic", "Topic_Security"),
+    ("Policy-Remote-Work", "Policy", [("governs", "Azure_VPN_Gateway"), ("aboutTopic", "Topic_Security"),
                                       ("relatedTo", "KB-201")]),
 ]
 
@@ -89,7 +89,7 @@ def write_owl():
          '     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"',
          '     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">',
          f'  <owl:Ontology rdf:about="{NS[:-1]}">',
-         '    <rdfs:label>NovaTech Knowledge Management Ontology</rdfs:label>',
+         '    <rdfs:label>Microsoft Knowledge Management Ontology</rdfs:label>',
          '    <rdfs:comment>Extends the IT Technical Support ontology with document types, topics, departments and lifecycle stages.</rdfs:comment>',
          '  </owl:Ontology>']
     for name, parent, comment in CLASSES:
@@ -108,7 +108,7 @@ def write_owl():
         body = ''.join(f'<{p} rdf:resource="{NS}{t}"/>' for p, t in props)
         o.append(f'  <owl:NamedIndividual rdf:about="{NS}{ind}"><rdf:type rdf:resource="{NS}{cls}"/>{body}</owl:NamedIndividual>')
     o.append('</rdf:RDF>')
-    out = ROOT / "ontology" / "NovaTechKM.owl"
+    out = ROOT / "ontology" / "MicrosoftKM.owl"
     out.write_text("\n".join(o), encoding="utf-8")
     print("Wrote", out, f"({len(CLASSES)} classes, {len(OBJECT_PROPS)} object properties)")
 
@@ -135,7 +135,7 @@ def arrow(ax, p1, p2, label=None, rad=0.0, color=RED, style="-|>", ls="-", lw=1.
 def _old_ontology_graph():
     fig, ax = plt.subplots(figsize=(16, 10))
     ax.set_xlim(-10, 13); ax.set_ylim(-5.2, 8); ax.axis("off")
-    ax.set_title("NovaTech Knowledge Ontology: domain concepts, document types and relations",
+    ax.set_title("Microsoft Knowledge Ontology: domain concepts, document types and relations",
                  fontsize=16, color=NAVY, fontweight="bold")
     P = {"Document": (1, 2), "Topic": (1, 6.3), "System": (7, 5), "Incident": (7, 1.8),
          "Customer": (11, 1.8), "Tool": (11, 5), "Technician": (-6, 3.2), "Department": (-6, 6.5),
@@ -200,7 +200,7 @@ def _old_doc_concept_graph():
 def lifecycle_map():
     fig, ax = plt.subplots(figsize=(16, 10))
     ax.set_xlim(-11, 11); ax.set_ylim(-7, 7.2); ax.axis("off")
-    ax.set_title("NovaTech Solutions: Knowledge Lifecycle Map", fontsize=18, color=NAVY, fontweight="bold")
+    ax.set_title("Microsoft Knowledge Lifecycle Map", fontsize=18, color=NAVY, fontweight="bold")
     stages = [
         ("1. CREATE / ACQUIRE", "Tickets, incident reviews, project work,\nvendor docs, training, expert interviews",
          "Tacit to explicit: engineers write\nreports, drafts and lessons learned", (0, 5.3), False),
@@ -230,7 +230,7 @@ def lifecycle_map():
         link(ax, a, b, ((6.2, 2.5), (6.2, 2.5)), None, color=NAVY, lw=3, rad=-0.12)
     ax.add_patch(FancyBboxPatch((-2.6, -1.1), 5.2, 2.2, boxstyle="round,pad=0.02,rounding_size=0.3",
                                 fc="white", ec=NAVY, lw=2.5, zorder=3))
-    ax.text(0, 0.45, "NovaTech Knowledge Base", ha="center", fontsize=13, color=NAVY, fontweight="bold", zorder=4)
+    ax.text(0, 0.45, "Microsoft Knowledge Base", ha="center", fontsize=13, color=NAVY, fontweight="bold", zorder=4)
     ax.text(0, -0.35, "Ontology-structured explicit knowledge\n+ tacit knowledge of technicians", ha="center",
             fontsize=9.5, color="#333", zorder=4)
     ax.text(0, -6.75, "Gold = stages supported by the automated prototype   |   Tacit knowledge becomes explicit in stage 1 "
@@ -264,7 +264,7 @@ def ontology_graph():
     W, H = 2.7, 0.9
     fig, ax = plt.subplots(figsize=(16, 10.5))
     ax.set_xlim(-11, 11); ax.set_ylim(-5.4, 8.8); ax.axis("off")
-    ax.set_title("NovaTech Knowledge Ontology: domain concepts, document types and relations",
+    ax.set_title("Microsoft Knowledge Ontology: domain concepts, document types and relations",
                  fontsize=16, color=NAVY, fontweight="bold")
     P = {"Document": (0, 4), "Topic": (-7.5, 4), "LifecycleStage": (7.5, 4), "Department": (-7.5, 0.5),
          "Incident": (0, 0), "System": (7.5, 0.5), "Technician": (-7.5, -2.8), "Tool": (7.5, -2.8),

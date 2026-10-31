@@ -1,3 +1,3 @@
 Technical Specification: VPN Gateway Architecture
 
-The VPN gateway is deployed as a high availability pair behind the perimeter firewall. It uses IPsec and TLS tunnels with certificate-based authentication. The architecture diagram shows the load balancer, the gateway cluster, the RADIUS server and the connection to the Active Directory domain.
+The VPN gateway is deployed as a high availability pair behind the perimeter firewall. It uses IPsec and TLS tunnels with certificate-based authentication. The architecture diagram shows the load balancer, the gateway cluster, the RADIUS server and the connection to Microsoft Entra ID.
