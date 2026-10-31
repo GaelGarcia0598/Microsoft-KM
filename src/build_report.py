@@ -56,7 +56,7 @@ def table(rows, widths, header=True):
 def footer(c, d):
     c.setFont("Helvetica", 8)
     c.setFillColor(colors.grey)
-    c.drawString(0.75 * inch, 0.5 * inch, "Microsoft - Knowledge Management System | Gael AndrÃ©s GarcÃ­a GarcÃ­a")
+    c.drawString(0.75 * inch, 0.5 * inch, "Microsoft - Knowledge Management System | Gael Andrés García García")
     c.drawRightString(letter[0] - 0.75 * inch, 0.5 * inch, f"Page {d.page}")
 
 
@@ -64,16 +64,16 @@ def build():
     s = []
     # ---------- Cover ----------
     s += [Spacer(1, 1.2 * inch),
-          P("Sistemas y tecnologÃ­as de administraciÃ³n del conocimiento",
+          P("Sistemas y tecnologías de administración del conocimiento",
             ParagraphStyle("c1", parent=H2, alignment=TA_CENTER, textColor=colors.HexColor("#2a7ba8"), fontSize=14)),
           P("Knowledge Management System for Microsoft",
             ParagraphStyle("c2", parent=H1, alignment=TA_CENTER, fontSize=26, leading=31, spaceBefore=14)),
           P("Project progress report: lifecycle map, ontology, automated classification and semantic search",
             ParagraphStyle("c3", parent=B, alignment=TA_CENTER, fontSize=12, textColor=colors.HexColor("#555555"))),
           Spacer(1, 0.4 * inch)]
-    cov = Table([[P("<b>Student</b>", CELLB), P("Gael AndrÃ©s GarcÃ­a GarcÃ­a", CELL)],
+    cov = Table([[P("<b>Student</b>", CELLB), P("Gael Andrés García García", CELL)],
                  [P("<b>Instructor</b>", CELLB), P("Jonathan Alexis Puente Guerrero", CELL)],
-                 [P("<b>Course</b>", CELLB), P("Sistemas y tecnologÃ­as de administraciÃ³n del conocimiento", CELL)],
+                 [P("<b>Course</b>", CELLB), P("Sistemas y tecnologías de administración del conocimiento", CELL)],
                  [P("<b>Deliverable</b>", CELLB), P("Project progress document", CELL)],
                  [P("<b>Date</b>", CELLB), P("10/30/2026", CELL)],
                  [P("<b>Repository</b>", CELLB), P(f'<link href="{REPO_URL}" color="blue">{REPO_URL}</link>', CELL)]],
@@ -247,7 +247,7 @@ def build():
     out = ROOT / "docs" / "Microsoft_KM_Project_Progress.pdf"
     SimpleDocTemplate(str(out), pagesize=letter, leftMargin=0.75 * inch, rightMargin=0.75 * inch, topMargin=0.7 * inch,
                       bottomMargin=0.8 * inch, title="Microsoft Solutions - Knowledge Management System",
-                      author="Gael AndrÃ©s GarcÃ­a GarcÃ­a").build(s, onFirstPage=lambda c, d: None, onLaterPages=footer)
+                      author="Gael Andrés García García").build(s, onFirstPage=lambda c, d: None, onLaterPages=footer)
     print("Wrote", out)
 
 
